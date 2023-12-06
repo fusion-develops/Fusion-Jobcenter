@@ -1,12 +1,10 @@
-
 for i = 1, #Config do 
     local CenterData = Config[i]
     local JobOptions = {}
 
-
     for j = 1, #CenterData.Jobs do 
         local curjob = CenterData.Jobs[j]
-        JobOptions[#JobOptions+1] = {
+        JobOptions[j] = {
             title = CenterData.JobLabelPrefix .. ' '.. curjob.Job,
             description = 'Apply For '.. curjob.Job,
             onSelect = function()
@@ -41,5 +39,4 @@ for i = 1, #Config do
             lib.showContext('jobcenter'.. i)
         end
     end
-
 end 
