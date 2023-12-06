@@ -33,7 +33,7 @@ for i = 1, #Config do
     end
     
     function point:nearby()
-        CenterData.DrawMarker(CenterData.Position)
+        CenterData.DrawMarker(self.coords)
         if self.currentDistance < CenterData.AccessRadius and IsControlJustReleased(0, CenterData.OpenKey) then
             lib.hideContext(false)
             lib.showContext('jobcenter'.. i)
